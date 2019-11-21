@@ -1,20 +1,49 @@
-let a= [1,1,2,33,33,4,4,5,'nihao','nihao']
-
-
-function unique(array) {
-  let temp =[]
-  let obj = {}
-  for(let i=0 ; i<array.length ; ++i){
-    if(obj[array[i]]===undefined){
-      obj[array[i]]=1
-      temp.push(array[i])
-    }
+ul.addEventListener('click', function(e){
+  if(e.target.tagName.toLowerCase() === 'li' ){
+      fn() // 执行某个函数
   }
-  return temp
+})
+
+
+
+function delegate(element, eventType, selector, fn) {
+  element.addEventListener(eventType, e => {
+    let el = e.target
+    while (!el.matches(selector)) {
+      if (element === el) {
+        el = null
+        break
+      }
+      el = el.parentNode
+    }
+    el && fn.call(el, e, el)
+  })
+  return element
 }
 
-console.dir(unique(a))
 
+
+// let a= [1,1,2,33,33,4,4,5,'nihao','nihao']
+
+
+// function unique(array) {
+//   return Array.from(new Set(array))
+// }
+// console.dir(unique(a))
+
+// function unique(array) {
+//   let temp =[]
+//   let obj = {}
+//   for(let i=0 ; i<array.length ; ++i){
+//     if(obj[array[i]]===undefined){
+//       obj[array[i]]=1
+//       temp.push(array[i])
+//     }
+//   }
+//   return temp
+// }
+
+// console.dir(unique(a))
 
 // function unique(array) {
 //   let temp =[]
