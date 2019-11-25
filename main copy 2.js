@@ -13,7 +13,7 @@
 // }
 
 // request.send()
-
+//请继续加油
 
 //斐波那契数列
 
@@ -27,9 +27,9 @@ function fe(n) {
   }else{
     alert("请输入一个正整数")
   }
-
 }
 
-
 console.log(fe(a))
+
+
  
