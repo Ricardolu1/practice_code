@@ -35,17 +35,30 @@
 //可以简单记一下sort排序的规则，a-b小于0，a在前面(返回值为负)，a-b大于0，b在前面(返回值为正)
 
 
-let str = "hello world"
-function paixu(arr) {
-  let temp =[]
-  for (let i = 0; i < arr.length; i++) {
-    temp.push(str[i].charCodeAt())
-  }
-  temp.sort(function (a,b) {
-    return b-a
-  })
-  return temp
-}
+// let str = "hello world"
+// function paixu(arr) {
+//   let temp =[]
+//   for (let i = 0; i < arr.length; i++) {
+//     temp.push(str[i].charCodeAt())
+//   }
+//   temp.sort(function (a,b) {
+//     return b-a
+//   })
+//   return temp
+// }
 
-let a= paixu(str)
-console.log(a)
+// let a= paixu(str)
+// console.log(a)
+
+function f(n) {
+  if (n===1) {
+    return 1
+  }else if(n===2){
+    return 2
+  }else if (n===3) {
+    return 4
+  }else if (n>3) {
+    return f(n-1)+f(n-2)+f(n-3)
+  }
+}
+console.log(f(11))
