@@ -1,5 +1,5 @@
 let timeID = null
-
+//防抖
 button1.onclick=function () {
   if (timeID) {
     clearInterval(timeID)
@@ -16,7 +16,7 @@ function fn() {
   console.log('执行函数')
 }
 
-
+//节流
 let cd = false
 button2.onclick = function () {
   if (cd) {
