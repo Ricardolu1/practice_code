@@ -61,4 +61,4 @@ function f(n) {
     return f(n-1)+f(n-2)+f(n-3)
   }
 }
-console.log(f(111))
+console.log(f(11))
