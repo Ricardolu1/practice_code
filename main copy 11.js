@@ -4,6 +4,7 @@ async function test() {
   x += await 2;// 把await放在x前面
   console.log('11111111111111')
   console.log(x);	 // 这里又输出什么？
+  console.log('33333333333333333')
 }
  
 test();
