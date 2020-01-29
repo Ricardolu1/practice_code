@@ -42,7 +42,8 @@ var a={
   sex:'nan',
   father:{
     age:10,
-    name:'yx'
+    name:'yx',
+    sex:'male'
   }
   
 }
