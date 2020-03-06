@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>react尝试</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://cdn.bootcss.com/react/16.8.6/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.8.6/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.js"></script>
+    <script type="text/babel">
+      const STR = '被调用，this指向：'
+      
+      class App extends React.Component {
+        constructor() {
+          super()
+          console.log(typeof this.render ,11)
+        //测试函数
+        }
+        handler() {
+          console.log(`handler ${STR}`, this, (typeof this))
+        }
+
+        render() {
+          console.log(`render ${STR}`, this)
+          return (
+            <div>
+              <h1>hello World</h1>
+              <label htmlFor="btn">单击打印函数handler中this的指向</label>
+              <input
+              id="btn"
+              type="button"
+              value="单击"
+              onClick={this.handler}
+              />
+              </div>
+          )
+        }
+      }
+
+          ReactDOM.render(
+            <div>
+              <App />
+            </div>,
+            document.getElementById('root')
+          )
+          </script>
+  </body>
+</html>
