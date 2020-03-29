@@ -1,39 +1,40 @@
-// let a = [
-//   [1, 2, [3, 4], 5],
-//   [6, 7, 8],
-//   [[9, 10], 11]
-// ]
+let a = [
+  [1, 2, [3, 4], 5],
+  [6, 7, 8],
+  [[9, 10], 11]
+]
 
-// let arr =[[1,23,4,[22,3]],5]
-// console.log(...arr)
+let arr =[[1,23,4,[22,3]],5]
+console.log(...arr)
 
-// function flat(arr) {
-//   while (arr.some(item => Array.isArray(item))) {
-//     arr = [].concat(...arr);//变成一个数组
-//     console.log(arr)
-//     //第一次 ...arr的值，[1,23,4,[22,3]] , 5
-//     //concat以后 [1,23,4,[22,3],5]
-//     //...arr = 1,23,4,[22,3],5
-//     // concat以后 1,12,4,22,3,5
-//   }
-//   return arr;
-// }
+function flat(arr) {
+  while (arr.some(item => Array.isArray(item))) {
+    arr = [].concat(...arr);//变成一个数组
+    console.log(arr)
+    //第一次 ...arr的值，[1,23,4,[22,3]] , 5
+    //concat以后 [1,23,4,[22,3],5]
+    //...arr = 1,23,4,[22,3],5
+    // concat以后 1,12,4,22,3,5
+  }
+  return arr;
+}
 
-// flat(arr)
+flat(arr)
 
 
-// let arr = [[2,3,[1,23,[33,4,[55,2]],4]],33]
-// function flat(arr) {
-//   let result = [];
-//   arr.map(item => {
-//     if (Array.isArray(item)) {
-//       result = result.concat(flat(item));
-//     } else {
-//       result.push(item);
-//     }
-//   });
-//   return result;
-// }
+let arr = [[2,3,[1,23,[33,4,[55,2]],4]],33]
+
+function flat(arr) {
+  let result = [];
+  arr.map(item => {
+    if (Array.isArray(item)) {
+      result = result.concat(flat(item));
+    } else {
+      result.push(item);
+    }
+  });
+  return result;
+}
 
 
 var a={
