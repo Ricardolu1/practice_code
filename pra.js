@@ -24,8 +24,8 @@ let a = [
 
 function fla(arr) {
   return arr.reduce((pre, cur)=>{
-    
-  })
+    return pre.concat(Array.isArray(cur) ? fla(cur) : cur)
+  },[])
 }
 
 console.log(a)
