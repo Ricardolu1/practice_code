@@ -20,3 +20,5 @@ function ajax(url) {
 let url = "/data.json"
 
 ajax(url).then(data=>console.log(data)).catch(e=>console.error(e))
+
+//asdasd
